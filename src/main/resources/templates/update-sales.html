@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit sales</title>
+</head>
+<body>
+    <h1>Update sales</h1>
+    <form action="update-sales" method="post">
+        <input type="hidden" th:field="${sales.id}" />
+        <input type="text" th:field="${sales.date}" />
+        
+        <!-- Input field untuk Coffee -->
+        <select th:field="${sales.coffee.id}">
+            <option th:each="coffee : ${kopi}" th:value="${coffee.id}" th:text="${coffee.nama}"></option>
+        </select>
+        
+        <!-- Input field untuk Barista -->
+        <select th:field="${sales.barista.id}">
+            <option th:each="barista : ${baris}" th:value="${barista.id}" th:text="${barista.nama}"></option>
+        </select>
+  
+        <button type="submit">Save sales</button>
+    </form>
+</body>
+</html>

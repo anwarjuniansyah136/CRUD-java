@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Edit Barista</title>
+  </head>
+  <body>
+    <h1>Update Barista</h1>
+    <form action="save-barista" method="post">
+      <input type="hidden" th:field="${barista.id}" />
+      <input type="text" th:field="${barista.name}" />
+      <input type="text" th:field="${barista.age}" />
+      <input type="text" th:field="${barista.gender}" />
+      <input type="text" th:field="${barista.email}" />
+
+      <button type="submit">Save Barista</button></a>
+    </form>
+  </body>
+</html>
